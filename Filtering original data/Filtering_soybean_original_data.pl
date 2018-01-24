@@ -19,7 +19,7 @@ my $group_info = $group.$group_number;
 ##User input for the specific chromosomes need to loop through
 my ($ch_s, $ch_e) = @ARGV;
 for (my $ch = $ch_s; $ch <= $ch_e; $ch ++) {
-	my $hmp_file = $hmp_dir.$group_info.'_Chr'.$ch.'.hmp_maf'.$maf_percent.'_miss'.$missing_percent; 
+	my $hmp_file = $hmp_dir.$group_info.'_Chr'.$ch.'.maf'.$maf_percent.'_miss'.$missing_percent; 
 	my $chch = $ch < 10 ? '0'.$ch : $ch;
 	my $ori_ch_file = $ori_dir.'Gm'.$chch.'.snp.genotype';
 	Format_to_hmp($ori_ch_file, $hmp_file, $chch, $group_number, $missing_rate, $maf);
