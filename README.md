@@ -1,9 +1,9 @@
-##Repository for the "Genome-wide nucleotide patterns and potential mechanisms for genome divergence following domestication" project.##
-
+ 
+## Repository for the "Genome-wide nucleotide patterns and potential mechanisms for genome divergence following domestication" project. ##
 
 **Note: in this depository we did not store the original data mainly because there are already available online in the original publication. Here we will documenting the analysis in detail and make the pipeline clear.**
 
-###Outline of the repository###
+### Outline of the repository ###
 
 
 In order to better guide the visitors about the repository, here we briefly introduce the outline of the repository
