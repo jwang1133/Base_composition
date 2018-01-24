@@ -17,7 +17,7 @@ In order to better guide the visitors about the repository, here we briefly intr
 
 **2. Genome-wide base composition** 
 
--Script for calculation from genome-wide SNPs
+-Script for base composition calculation from genome-wide SNPs
 
 -Dataset of base composition value for each accession
 
