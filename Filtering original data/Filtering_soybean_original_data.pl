@@ -9,7 +9,7 @@ my $hmp_dir = '/XXX/';
 
 my $group = 'Gm';
 my $group_number = 302;
-my $missing_percent = 100;
+my $missing_percent = 20;
 my $maf_percent = 5;
 
 my $missing_rate = $missing_percent/100;
