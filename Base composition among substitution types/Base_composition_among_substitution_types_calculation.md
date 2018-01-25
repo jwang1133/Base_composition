@@ -9,3 +9,5 @@ After the run the script, the output file is named as **maize100\_Subgroup\_AC\_
 **2. Format the file for plotting**
 
 The formatted file is stored in file named as **maize\_subgroup\_basecontent**
+
+And the soybean data is stored in file named as **soybean\_subgroup\_basecontent**
