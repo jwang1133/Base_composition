@@ -27,8 +27,6 @@ In order to better guide the visitors about the repository, here we briefly intr
 
 -Dataset of base composition value conditional on each substitution type 
 
--R code for plotting Figure2
-
 **4. Base composition distribution at different genomic regions**
   
 -Predict SNP effect with SnpEff
