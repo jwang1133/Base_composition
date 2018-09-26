@@ -74,8 +74,8 @@ for (my $ch = $ch_s; $ch <= $ch_e; $ch ++) {
 			my @sorted_allele	= sort { $hash{$a} <=> $hash{$b} } keys %hash;
 			my $maf1 = sprintf "%.2f", $hash{$sorted_allele[0]} / $total;
 			next unless ($#sorted_allele == 1 && $maf1 >= $maf_r && $missing_rate1 <= $missing_r );
-			my $major_allele = $sorted_allele[1]; 
-			my $minor_allele = $sorted_allele[0]; 
+			my $major_allele = $sorted_allele[1]; #in here ref_allele is no the allele of reference genome but the major allele
+			my $minor_allele = $sorted_allele[0]; #in here $alt_allele is minor allele.
 			my $ref_allele = $ch_db->seq($ch, $t[3], $t[3]);
 			next unless $ref_allele =~ /[ACGT]/;
 			next unless ($ref_allele eq $major_allele || $ref_allele eq $minor_allele);

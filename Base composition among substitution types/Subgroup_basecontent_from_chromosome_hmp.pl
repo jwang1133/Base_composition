@@ -7,7 +7,7 @@ use strict;
 ##those are the parameter need to change
 
 #######################################
-my $group = 'maize';
+my $group = 'Maize';
 my $group_number=100;
 my $missing_percent = 20;
 my $maf_percent = 5;
@@ -24,13 +24,13 @@ my $sub = 'AC';
 #my $sub = 'GT';
 
 #######################################
-my $input_file_dir = '/media/lixr/_media_disk_1_/Jinyu/Maize_HapMapV2_100/geno/';
-my $output_dir_pheno = '/media/lixr/_media_disk_1_/Jinyu/Maize_HapMapV2_100/Subtype_analysis/phenov2/';
+my $input_file_dir = '/XXX/';
+my $output_dir_pheno = '/XXX/';
 
 my $id_line_file = $input_file_dir.$group_info.'_1st_id_line';
 my ($strain_id_arrayref, $first_id_line) = Get_strain_id($id_line_file); 
 
-my $total_snp_file = 'maize100_ATCG_maf5_miss20';
+my $total_snp_file = 'Maize100_ATCG_maf5_miss20';
 my $snp_numer_hashref = Get_snp_number($total_snp_file); 
 
 my @bases = qw /A C G T/;
