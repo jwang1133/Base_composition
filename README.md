@@ -69,7 +69,7 @@ In order to better guide the visitors about the repository, here we briefly intr
 
 **6. Mutation spectrum from population-private SNPs**
 
--Blast to *medicago truncatula* for the orthlogous regions to identify the ancestral state of the soybean SNPs
+-Blast to *Medicago truncatula* for the orthlogous regions to identify the ancestral state of the soybean SNPs
 
 -Scripts for filtering population private SNPs from the original dataset
 
