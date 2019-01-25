@@ -7,8 +7,8 @@ use strict;
 
 
 ###############Specifying the parameters
-my $group = 'Maize';
-my $group_number= 100;
+my $group = 'Gm';
+my $group_number= 302;
 my $missing_percent = 20;
 my $maf_percent = 5;
 ###################################
@@ -50,15 +50,6 @@ my @subs_type = qw/Sub6 AG_CT/;
 #my $sub = 'CT';
 #my $sub = 'GT';
 #########################################################
-
-#my @category_array	= ("Genic", "Nongenic","Nonsyn","In", "Syn", "Nyn", " 3U", "5U", "Sg", "Rg","Non", "Promoter5k", "P5", "P1", "All");
-#
-#my @category_array_1	= ("Genic", "Nongenic", "Nonsyn", "Promoter5k","All");
-#
-#my @Genic_array = ("In", "Syn", "Nyn", "3U", "5U", "Sg", "Rg" );
-#my @Nsy_array = ("Nyn", "Sg", "Rg" );
-#my @Nongenic_array = ("Non", "P5", "P1"); 
-#my @Promoter5K_array = ("P5", "P1");
 
 my @category_array	= ("All", "Genic", "Nongenic","Nonsyn","UTRs","Og","Promoter5k","In", "Syn", "Nyn", "3U", "5U", "Sg", "Rg","Non",  "P5", "P1");
 

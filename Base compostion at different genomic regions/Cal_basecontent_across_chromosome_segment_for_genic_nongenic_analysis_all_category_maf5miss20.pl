@@ -7,8 +7,8 @@ use strict;
 
 
 ###############Specifying the parameters
-my $group = 'Maize';
-my $group_number= 100;
+my $group = 'Gm';
+my $group_number= 302;
 my $missing_percent = 20;
 my $maf_percent = 5;
 ###################################
@@ -103,7 +103,7 @@ for (my $ch = $ch_s; $ch <= $ch_e; $ch ++) {
 				}
 			else {
 				$segment_s = ($seg-1)*$w;
-				$segment_e = ($seg-1)*$w + $segment_size > $chro_size? $chro_size : $seg*$segment_size - $step_size;
+				$segment_e = ($seg-1)*$w + $segment_size > $chro_size? $chro_size : ($seg-1)*$w + $segment_size;
 				}
 			open (INPUT, $input_chrsnp_file ) || die;
 			while (<INPUT>) {
