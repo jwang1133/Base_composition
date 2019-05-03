@@ -1,5 +1,5 @@
  
-## Repository for the "Genome-wide nucleotide patterns and potential mechanisms for genome divergence following domestication" project. ##
+## Repository for the "Genome-wide nucleotide patterns and potential mechanisms for genome divergence following domestication in maize and soybean" project. ##
 
 **Note: in this depository we did not store the original data mainly because there are already available online in the original publication. Here we will document the analysis in detail and present a clear pipeline.**
 

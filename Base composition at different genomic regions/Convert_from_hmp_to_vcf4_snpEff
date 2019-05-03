@@ -1,0 +1,67 @@
+#!/usr/local/bin/perl -w
+## convert hmp file to vcf files
+use Bio::DB::Fasta;
+use strict;
+
+#########################Specifying parameters
+my $group = 'Maize';
+my $group_number= 100;
+my $missing_percent = 20;
+my $maf_percent = 5;
+###################################
+my $group_info = $group.$group_number;
+my ($ch_s, $ch_e) = ($ARGV[0], $ARGV[1]);
+
+#########################Specifying the directory
+my $dir = '/hdd/jinyuw/BCS/';
+my $hmp_dir = $dir.$group_info.'/geno/';
+my $ref_dir = $dir.$group_info.'/Refs/AGPV4/';
+
+##################################################
+my $vcf_dir =  $dir.$group_info.'/vcf_file/';
+mkdir $vcf_dir unless  -e $vcf_dir;
+
+#my $ch_fas_file = $ref_dir.'Zea_mays.AGPv4.dna.toplevel.fa';
+#my $ch_db =  Bio::DB::Fasta->new($ch_fas_file);
+
+for (my $ch = $ch_s; $ch <= $ch_e; $ch ++) {
+#	my $chch = sprintf "%02d", $ch;
+#	my $chro = 'Chr'.$ch;
+#################################Part that need to be changed
+	my $ch_fas_file = $ref_dir.'Chr'.$ch.'.fa';
+#	my $ch_fas_file = $ref_dir.'Zea_mays.AGPv4.dna.chromosome.'.$ch.'.fa';
+	my $ch_db =  Bio::DB::Fasta->new($ch_fas_file);
+
+	my $ch_hmp_file = $hmp_dir.$group_info.'_Chr'.$ch.'.maf'.$maf_percent.'_'.'miss'.$missing_percent;
+	next unless -e $ch_hmp_file;
+	my $ch_vcf_file = $vcf_dir.$group_info.'_Chr'.$ch.'.vcf_maf'.$maf_percent.'_'.'miss'.$missing_percent;
+	
+	open (Hmp, $ch_hmp_file) || die;
+	open (Vcf, '>'.$ch_vcf_file) || die;
+	print Vcf "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\n";
+	
+	while (<Hmp>) {
+		chomp;
+		my $line = $_;
+		next if $line =~ /alleles/;
+		my @t = split /\t/, $line;
+		my $ref_0 = $ch_db->seq($ch, $t[3], $t[3]);
+		my $alts = Ref_alt_alleles(\@t, $ref_0);
+		print Vcf 'Chr'.$ch."\t".$t[3]."\t".$t[0]."\t".$ref_0."\t".$alts."\t255\tPASS\tNS=100\n";
+		}
+	close Hmp;
+	close Vcf;	
+	}
+	
+sub Ref_alt_alleles {
+	my ($arrayref, $ref_0) = @_;
+	my %hash;
+	for (my $i = 11; $i < @$arrayref; $i ++)  {
+		my $b = $$arrayref[$i];
+		next if $b eq $ref_0 || $b eq 'N';
+		next unless $b =~ /[ATCG]/;
+		$hash{$b} = 1 ;
+		}
+	my $alts = join ( ',', keys %hash); ##concatenate all the alternate allele
+	return $alts;
+	}
